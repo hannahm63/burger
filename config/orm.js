@@ -22,10 +22,10 @@ const orm = {
 
     },
 
-    updateOne: function (tableName, burgerUpdate, columnName, columnValue, cb) {
+    updateOne: function (tableName, updateObj, columnName, columnValue, cb) {
         const queryString = "UPDATE ?? SET ? WHERE ?? = ?";
 
-        connection.query(queryString, [tableName, burgerUpdate, columnName, columnValue], function (error, results) {
+        connection.query(queryString, [tableName, updateObj, columnName, columnValue], function (error, results) {
             if (error) throw error;
             cb(results);
         });
