@@ -1,7 +1,6 @@
 const connection = require("./connection");
 
 const orm = {
-
     selectAll: function (tableName, cb) {
 
         const queryString = "SELECT * FROM ??";
@@ -12,11 +11,11 @@ const orm = {
         });
     },
 
-    insertOne: function (tableName, newBurger, cb) {
+    insertOne: function (tableName, newObj, cb) {
 
         const queryString = "INSERT INTO ?? SET ?";
 
-        connection.query(queryString, [tableName, newBurger], function (error, results) {
+        connection.query(queryString, [tableName, newObj], function (error, results) {
             if (error) throw error;
             cb(results);
         });
