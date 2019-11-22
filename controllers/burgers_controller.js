@@ -5,6 +5,7 @@ const burger = require("../models/burger");
 
 router.get("/", function (req, res) {
     burger.selectAll(function (results) {
+        console.log(results);
         // insert results into handlebars object to be displayed on page when called
         res.render("index", { burgers: results });
     })

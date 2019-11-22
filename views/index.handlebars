@@ -1,7 +1,36 @@
-<h1>Burgers!</h1>
+<div class="container">
 
-<ul>
-    {{#each burgers}}
-    <li>{{burgers}}</li>
-    {{/each}}
-</ul>
+    <div class="row">
+        <div class="col-lg-12 jumbotron">
+            <h1>Burgers!</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <ul class="list-group">
+                {{#each burgers}}
+                {{#unless devoured}}
+                <li data-value={{id}} data-deveoured={{devoured}} class="list-group-item">
+                    <p>{{burger_name}}</p><button type="button" class="btn btn-outline-danger">Devour it!</button>
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col-lg-4">
+
+
+        </div>
+        <div class="col-lg-4">
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                <li data-value={{id}} data-deveoured={{devoured}}>{{burger_name}}</li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+</div>
